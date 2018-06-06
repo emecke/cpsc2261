@@ -1,0 +1,7 @@
+<div *ngIf="showDelete">
+<p>
+  Delete {{r.name | uppercase}} recipe?
+
+<span><button class="confirmDeleteButton" (click)="deleteRecipe()">confirm</button><button class="cancelDeleteButton" (click)="cancel()">cancel</button></span>
+</p>
+</div>

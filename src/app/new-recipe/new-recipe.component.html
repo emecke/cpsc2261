@@ -1,0 +1,16 @@
+<div>
+    <div *ngIf="!r.name"><h3> Create a new Recipe</h3></div>
+
+    <div *ngIf="r.name">
+            
+        <h3>
+            {{r.name | uppercase}} Recipe
+            <button (click)="saveToList()">save recipe to list</button>
+            <br>
+            <span>Estimated Time: {{r.estimatedTime}} minutes</span>
+        </h3>
+    </div>
+    <br>
+    <app-recipe-modification [showModify]="true" [r]="r"></app-recipe-modification>
+
+</div>

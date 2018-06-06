@@ -1,0 +1,23 @@
+
+
+<div class= "RecipeDetails" *ngIf="showDetails">
+  Ingredients:
+  <div *ngIf="r.ingredients">
+  <ul >
+    <li class="recipe_item" *ngFor="let i of r.getArrayIngredients()" >
+      <div *ngIf="r.ingredients">
+        <span>{{i.name}}</span> {{i.quantity}} <span *ngIf="edit"><button class="dbutton" (click)="removeitem(i)">delete</button></span>
+      </div>
+      </li>
+  </ul>
+  </div>
+  <br />
+  Instructions:
+  <div *ngIf="r.instructions">
+  <ul>
+    <li class="recipe_instruction" *ngFor="let i of r.getArrayInstructions()" >
+      <span>{{i[0]}}, {{i[1]}} minutes</span><span *ngIf="edit"><button class="dbutton" (click)="removeInstruction(i[0])">delete</button></span>
+    </li >
+  </ul>
+  </div>
+</div>

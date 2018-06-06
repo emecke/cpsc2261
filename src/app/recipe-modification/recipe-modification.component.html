@@ -1,0 +1,49 @@
+<div *ngIf="showModify">
+
+    <div *ngIf="r.name">
+        <app-view-recipe [showDetails]="true" [r]="r" [edit]="true"></app-view-recipe>
+      </div>
+
+  <div>
+    <span>
+      <label>Name:
+        <input [(ngModel)]="tempName" placeholder="recipe name">
+      </label>
+      <button class="update_button" (click)="updateName()">{{ r.name != "" ? 'update' : 'create' }}</button>
+    </span>
+
+  </div>
+<br>
+  <div>
+    <span>
+      <label>Ingredient Name:
+        <input type="text" [(ngModel)]="item" placeholder="item name">
+      </label>
+    </span>
+    <label>Quantity:
+      <input type="number" [(ngModel)]="quantity" placeholder="amount">
+    </label>
+    <div>
+      <button class="item_button"(click)="newItem()">add ingredient</button>
+    </div>
+
+  </div>
+  <br>
+  <div>
+    <span>
+      <label>Instructions:
+        <input type="text" [(ngModel)]="instruction" placeholder="instructions">
+      </label>
+    </span>
+    <label>Time:
+      <input type="number" [(ngModel)]="time" placeholder="minutes">
+    </label>
+    <div>
+      <button class="instruction_button" (click)="newInstruction()">add instruction</button>
+    </div>
+
+  </div>
+
+  <br>
+  
+</div>

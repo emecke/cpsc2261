@@ -1,0 +1,20 @@
+
+    
+<div>
+    <ul class="Recipe_List">
+        <li *ngFor="let x of rList">
+          <div *ngIf="x">
+          <span>{{x.name}}</span>: <span>{{x.estimatedTime}} minutes </span>
+          <span><button (click)="toggleView(x)"> {{ showRecipe(x) == true ? 'hide' : 'show' }}</button></span>
+          <span><button (click)="toggleDelete(x)"> delete</button></span>
+          <span *ngIf="showRecipe(x) && !deleteRecipe(x)"><button (click)="toggleEdit(x)"> {{ editRecipe(x) == true ? 'finish' : 'edit' }}</button></span>
+          <br>
+          <div>
+            <app-recipe-deletion [showDelete]="deleteRecipe(x)" [r]="x"></app-recipe-deletion>
+            <app-view-recipe [showDetails]="showRecipe(x) && !editRecipe(x) && !deleteRecipe(x)" [r]="x"></app-view-recipe>
+            <app-recipe-modification [showModify]="showRecipe(x) && editRecipe(x) && !deleteRecipe(x)" [r]="x"></app-recipe-modification>
+          </div>
+        </div>
+        </li>
+      </ul>
+</div> 
