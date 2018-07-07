@@ -33,7 +33,7 @@ export class RecipeDeletionComponent implements OnInit {
     let i: number;
     //current method of delete leaves behind undefined elements. Should be resolved when accessing database information rather than the demo array.
     i = this.rList.findIndex(element => element != undefined && element.name === this.r.name);
-    delete this.rList[i]
+    delete this.rList[i];
     //this.rList = this.rList.filter(element => element.name === this.r.name );
   }
 
